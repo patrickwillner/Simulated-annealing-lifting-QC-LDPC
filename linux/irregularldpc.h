@@ -69,11 +69,11 @@ void readME(vector<vector<vector<int> > >& mtr, istream& in = cin) {
 
 ll getRand(ll mod) {
     while (true) {
-        ll q = RAND_MAX + 1;
+        ll q = RAND_MAX;
         ll x = rand();
         while (q < mod) {
-            q *= (RAND_MAX + 1);
-            x = x * (RAND_MAX + 1) + rand();
+            q *= (RAND_MAX);
+            x = x * (RAND_MAX) + rand();
         }
         if (x <= q - 1 - (q % mod))
             return x % mod;
@@ -150,7 +150,7 @@ int getGirth(const vector<vector<vector<int> > >& a, const vector<vector<int> >&
             return g;
     }
     cerr << "girth >= 1000\n";
-    return (1 << 31) - 1;
+    return INT32_MAX;
 }
 
 
